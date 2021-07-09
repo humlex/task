@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import data from './data';
 import ButtonComponent from './components/Button';
+import TableComponent from './components/Table';
+import LoopIcon from '@material-ui/icons/Loop';
 import "./App.css";
 
 const App = () => {
@@ -10,23 +12,25 @@ const App = () => {
   const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
   const getResult = () => {
+    setIsLoading(true);
     getPromise().then((response) => setState(response))
-    setIsLoading(false);
   }
 
   const getPromise = () => {    
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(data);
+        resolve(data.rates);
+        setIsLoading(false);
       },3000)
     })
   }
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
-      <ButtonComponent onClick={getResult} placeholder={'Get data'}/>
-      {JSON.stringify(state)}
+      <ButtonComponent onClick={getResult} placeholder={'Get data'} disabled={false}/>
+      {console.log(state)}
+      {isLoading ? <LoopIcon/> : null}
+      <TableComponent data={state}/>
     </>
   )
 }
