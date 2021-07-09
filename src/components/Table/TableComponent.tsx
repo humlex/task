@@ -9,7 +9,7 @@ const TableComponent = ({data}: any) => {
             {dataArray.map((el: any) => <li className="list-item" key={el[0]}>`${el[0]} : ${el[1]}`</li>)}
         </ul>
     )
-}
+};
 
 export default TableComponent;
 

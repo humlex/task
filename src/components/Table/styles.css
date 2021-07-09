@@ -1,4 +1,8 @@
 .list-container {
+  margin: 0 auto;
+  width: max-content;
+  list-style: none;
+  text-align: center;
 }
 
 .list-item {

@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import data from './data';
 import ButtonComponent from './components/Button';
 import TableComponent from './components/Table';
-import LoopIcon from '@material-ui/icons/Loop';
+import ClipLoader from "react-spinners/ClipLoader";
+import { override } from './components/styles/styles';
 import "./App.css";
+
 
 const App = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -29,7 +31,7 @@ const App = () => {
     <>
       <ButtonComponent onClick={getResult} placeholder={'Get data'} disabled={false}/>
       {console.log(state)}
-      {isLoading ? <LoopIcon/> : null}
+      <ClipLoader loading={isLoading} size={50} css={override}/>
       <TableComponent data={state}/>
     </>
   )
