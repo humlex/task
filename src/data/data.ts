@@ -1,4 +1,4 @@
-export const data = {
+export default {
   "valid": true,
   "timestamp": 1582195447,
   "base": "USD",
