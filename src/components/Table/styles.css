@@ -1,9 +1,15 @@
 .list-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: auto;
   margin: 0 auto;
-  width: max-content;
+  width: 100vw;
   list-style: none;
   text-align: center;
 }
 
 .list-item {
+  margin: 5px;
+  padding: 5px 10px;
+  border: 1px solid #eeeeee;
 }

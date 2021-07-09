@@ -6,7 +6,6 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { override } from './components/styles/styles';
 import "./App.css";
 
-
 const App = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [state, setState] = useState<any>({});
@@ -23,14 +22,13 @@ const App = () => {
       setTimeout(() => {
         resolve(data.rates);
         setIsLoading(false);
-      },3000)
+      }, 3000)
     })
   }
 
   return (
     <>
-      <ButtonComponent onClick={getResult} placeholder={'Get data'} disabled={false}/>
-      {console.log(state)}
+      <ButtonComponent onClick={getResult} placeholder={'Get data'} disabled={Object.keys(state).length}/>
       <ClipLoader loading={isLoading} size={50} css={override}/>
       <TableComponent data={state}/>
     </>

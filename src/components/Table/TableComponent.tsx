@@ -6,7 +6,7 @@ const TableComponent = ({data}: any) => {
 
     return (
         <ul className="list-container">
-            {dataArray.map((el: any) => <li className="list-item" key={el[0]}>`${el[0]} : ${el[1]}`</li>)}
+            {dataArray.map((el: any) => <li className="list-item" key={el[0]}>{el[0]} | {el[1]}</li>)}
         </ul>
     )
 };
